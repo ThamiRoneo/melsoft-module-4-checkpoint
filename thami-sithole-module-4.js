@@ -30,3 +30,18 @@ for (let attendee of attendees) {
     console.log(`${attendee.name} -> ENTRY DENIED: NO VALID TICKET`);
   }
 }
+
+// Challenge 3: Access Zones
+console.log('\nAccess Zones:\n')
+for (let attendee of attendees) {
+  switch (attendee.ticket) {
+	case 'VIP':
+      console.log(`${attendee.name}\nTicket: VIP\nWristband: GOLD\n`);
+      break;
+    case 'General':
+      console.log(`${attendee.name}\nTicket: General\nWristband: BLUE\n`);
+      break;
+    default:
+      console.log('UNKNOWN TICKET TYPE\n');
+  }
+}
