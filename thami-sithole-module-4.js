@@ -98,6 +98,7 @@ let under18 = 0;
 let vipCount = 0;
 let generalCount = 0;
 let totalSpend = 0;
+let averageSpend = 0;
 
 for (let attendee of attendees) {
   validTickets += attendee.hasTicket;
@@ -106,6 +107,7 @@ for (let attendee of attendees) {
   vipCount += (attendee.ticket === 'VIP');
   generalCount += (attendee.ticket === 'General');
   totalSpend += (attendee.spend);
+  averageSpend = totalSpend / (validTickets);
 }
 
 console.log(`Valid Tickets: ${validTickets}`);
@@ -114,3 +116,4 @@ console.log(`Under-18 attendees: ${under18}`);
 console.log(`VIP ticket holders: ${vipCount}`);
 console.log(`General ticket holders: ${generalCount}`);
 console.log(`Total amount spent: R ${totalSpend.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
+console.log(`Average amount spent per attendee: R ${averageSpend.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
