@@ -10,7 +10,7 @@ let attendees = [
  { name: "Michael", age: 28, ticket: "General", hasTicket: true, checkedIn: false, spend: 450 }
 ];
 
-console.log('The Festival Queue:\n')
+console.log('The Festival Queue:')
 console.log('=======================');
 for (let attendee of attendees) {
   if (attendee.hasTicket === true) {
@@ -20,7 +20,7 @@ for (let attendee of attendees) {
 }
 
 // Challenge 2 -Who Can Enter?
-console.log('\nFestival entrence validation:\n')
+console.log('\nFestival entrence validation:')
 for (let attendee of attendees) {
   if (attendee.age >= 18 && attendee.hasTicket === true) {
     console.log(`${attendee.name} -> ENTRY APPROVED`);
@@ -32,7 +32,7 @@ for (let attendee of attendees) {
 }
 
 // Challenge 3: Access Zones
-console.log('\nAccess Zones:\n')
+console.log('\nAccess Zones:')
 for (let attendee of attendees) {
   switch (attendee.ticket) {
 	case 'VIP':
@@ -47,7 +47,7 @@ for (let attendee of attendees) {
 }
 
 // Challenge 4: VIP Lounge Security
-console.log('VIP Security Lounge:\n')
+console.log('VIP Security Lounge:')
 for (let attendee of attendees) {
   if ((attendee.hasTicket === true && attendee.age >= 18) && attendee.ticket === 'VIP') {
     console.log(`${attendee.name}: VIP LOUNGE ACCESS is APPROVED.`)
@@ -57,11 +57,21 @@ for (let attendee of attendees) {
 }
 
 // Challenge 5 - Find a Person in the Queue
-console.log('Find a Person in the Queue:\n');
+console.log('\nFind a Person in the Queue:');
 let searchName = 'Zanele';
 for (let attendee of attendees) {
   if (attendee.name === searchName) {
       console.log(`ATTENDEE FOUND\nName: ${attendee.name}\nAge: ${attendee.age}\nTicket: ${attendee.ticket}\nValid Ticket: ${attendee.hasTicket}`);
       break;
     }
+}
+
+// Challenge 6 - Security Fast Lane
+console.log('\nSecurity Fast Lane:')
+for (let attendee of attendees) {
+  if (attendee.hasTicket === false) {
+    continue;
+  } else {
+    console.log(`Checking ${attendee.name}...`)
+  }
 }
