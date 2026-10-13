@@ -108,6 +108,12 @@ for (let attendee of attendees) {
   generalCount += (attendee.ticket === 'General');
   totalSpend += (attendee.spend);
   averageSpend = totalSpend / (validTickets);
+  
+  if (attendee.spend >= 1000) {
+    console.log(`Highest-spending attendee: ${attendee.name} (R ${attendee.spend.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')})`);
+    break;
+  }
+  
 }
 
 console.log(`Valid Tickets: ${validTickets}`);
