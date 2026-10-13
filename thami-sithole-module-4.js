@@ -75,3 +75,17 @@ for (let attendee of attendees) {
     console.log(`Checking ${attendee.name}...`)
   }
 }
+
+// Challenge 7: Food Voucher Rewards
+console.log('\nFood Voucher Rewards:')
+for (let attendee of attendees) {
+  if (attendee.spend >= 1000) {
+    console.log(`${attendee.name} -> R200 food voucher`);
+  } else if (attendee.spend >= 500 && attendee.spend < 1000) {
+    console.log(`${attendee.name} -> R100 food voucher`);
+  } else if (attendee.spend >= 300 && attendee.spend < 500) {
+    console.log(`${attendee.name} -> R50 food voucher`);
+  } else {
+    console.log(`${attendee.name} -> No voucher`);
+  }
+}
