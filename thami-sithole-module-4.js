@@ -45,3 +45,13 @@ for (let attendee of attendees) {
       console.log('UNKNOWN TICKET TYPE\n');
   }
 }
+
+// Challenge 4: VIP Lounge Security
+console.log('VIP Security Lounge:\n')
+for (let attendee of attendees) {
+  if ((attendee.hasTicket === true && attendee.age >= 18) && attendee.ticket === 'VIP') {
+    console.log(`${attendee.name}: VIP LOUNGE ACCESS is APPROVED.`)
+  } else {
+    console.log(`${attendee.name}: VIP LOUNGE ACCESS is DENIED.`)
+  }
+}
