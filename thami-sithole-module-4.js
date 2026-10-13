@@ -55,3 +55,13 @@ for (let attendee of attendees) {
     console.log(`${attendee.name}: VIP LOUNGE ACCESS is DENIED.`)
   }
 }
+
+// Challenge 5 - Find a Person in the Queue
+console.log('Find a Person in the Queue:\n');
+let searchName = 'Zanele';
+for (let attendee of attendees) {
+  if (attendee.name === searchName) {
+      console.log(`ATTENDEE FOUND\nName: ${attendee.name}\nAge: ${attendee.age}\nTicket: ${attendee.ticket}\nValid Ticket: ${attendee.hasTicket}`);
+      break;
+    }
+}
