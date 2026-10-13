@@ -104,9 +104,13 @@ for (let attendee of attendees) {
   invalidTickets += (!attendee.hasTicket);
   under18 += (attendee.age < 18);
   vipCount += (attendee.ticket === 'VIP');
+  generalCount += (attendee.ticket === 'General');
+  totalSpend += (attendee.spend);
 }
 
 console.log(`Valid Tickets: ${validTickets}`);
 console.log(`Invalid Tickets: ${invalidTickets}`);
-console.log(`Under 18 year old: ${under18}`);
-console.log(`VIP count: ${vipCount}`);
+console.log(`Under-18 attendees: ${under18}`);
+console.log(`VIP ticket holders: ${vipCount}`);
+console.log(`General ticket holders: ${generalCount}`);
+console.log(`Total amount spent: R ${totalSpend.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
