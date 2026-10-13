@@ -102,7 +102,9 @@ let totalSpend = 0;
 for (let attendee of attendees) {
   validTickets += attendee.hasTicket;
   invalidTickets += (!attendee.hasTicket);
+  under18 += (attendee.age < 18);
 }
 
 console.log(`Valid Tickets: ${validTickets}`);
 console.log(`Invalid Tickets: ${invalidTickets}`);
+console.log(`Under 18 year old: ${under18}`);
