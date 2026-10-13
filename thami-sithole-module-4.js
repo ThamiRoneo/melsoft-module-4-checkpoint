@@ -109,11 +109,6 @@ for (let attendee of attendees) {
   totalSpend += (attendee.spend);
   averageSpend = totalSpend / (validTickets);
   
-  if (attendee.spend >= 1000) {
-    console.log(`Highest-spending attendee: ${attendee.name} (R ${attendee.spend.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')})`);
-    break;
-  }
-  
 }
 
 console.log(`Valid Tickets: ${validTickets}`);
@@ -123,3 +118,10 @@ console.log(`VIP ticket holders: ${vipCount}`);
 console.log(`General ticket holders: ${generalCount}`);
 console.log(`Total amount spent: R ${totalSpend.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
 console.log(`Average amount spent per attendee: R ${averageSpend.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
+
+for (let attendee of attendees) {
+  if (attendee.spend >= 1000) {
+    console.log(`Highest-spending attendee: ${attendee.name} (R ${attendee.spend.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')})`);
+    break;
+  }
+}
