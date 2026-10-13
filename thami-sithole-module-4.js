@@ -10,10 +10,23 @@ let attendees = [
  { name: "Michael", age: 28, ticket: "General", hasTicket: true, checkedIn: false, spend: 450 }
 ];
 
-console.log('**********************************************');
+console.log('The Festival Queue:\n')
+console.log('=======================');
 for (let attendee of attendees) {
-  if (attendee.hasTicket = true) {
+  if (attendee.hasTicket === true) {
     console.log(`Name: ${attendee.name}\nAge: ${attendee.age}\nTicket: ${attendee.ticket}\nValid Ticket: ${attendee.hasTicket}`);
-    console.log('**********************************************');
+    console.log('=======================');
+  }
+}
+
+// Challenge 2 -Who Can Enter?
+console.log('\nFestival entrence validation:\n')
+for (let attendee of attendees) {
+  if (attendee.age >= 18 && attendee.hasTicket === true) {
+    console.log(`${attendee.name} -> ENTRY APPROVED`);
+  } else if (attendee.age < 18 && attendee.hasTicket === true) {
+    console.log(`${attendee.name} -> ENTRY DENIED: UNDER 18`);
+  } else {
+    console.log(`${attendee.name} -> ENTRY DENIED: NO VALID TICKET`);
   }
 }
