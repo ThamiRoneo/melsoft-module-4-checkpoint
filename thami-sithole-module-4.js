@@ -103,8 +103,10 @@ for (let attendee of attendees) {
   validTickets += attendee.hasTicket;
   invalidTickets += (!attendee.hasTicket);
   under18 += (attendee.age < 18);
+  vipCount += (attendee.ticket === 'VIP');
 }
 
 console.log(`Valid Tickets: ${validTickets}`);
 console.log(`Invalid Tickets: ${invalidTickets}`);
 console.log(`Under 18 year old: ${under18}`);
+console.log(`VIP count: ${vipCount}`);
