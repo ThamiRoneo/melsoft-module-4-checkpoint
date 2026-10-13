@@ -125,3 +125,14 @@ for (let attendee of attendees) {
     break;
   }
 }
+
+// Challenge 9 - Find the Biggest Spender
+console.log('\nFinding the Biggest Spender:\n');
+console.log('===== TOP CUSTOMER =====');
+let biggestSpender = attendees[0];
+
+for (let key in attendees) {
+  if (attendees[key].spend >= 1000) {
+    console.log(`Name: ${attendees[key].name}\nAmount Spend: R${attendees[key].spend}\nReward: Backstage Upgrade`);
+  }
+}
