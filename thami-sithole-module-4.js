@@ -89,3 +89,20 @@ for (let attendee of attendees) {
     console.log(`${attendee.name} -> No voucher`);
   }
 }
+
+// Challenge 8 - Festival Statistics
+console.log('\nFestival Statistics:')
+let validTickets = 0;
+let invalidTickets = 0;
+let under18 = 0;
+let vipCount = 0;
+let generalCount = 0;
+let totalSpend = 0;
+
+for (let attendee of attendees) {
+  validTickets += attendee.hasTicket;
+  invalidTickets += (!attendee.hasTicket);
+}
+
+console.log(`Valid Tickets: ${validTickets}`);
+console.log(`Invalid Tickets: ${invalidTickets}`);
