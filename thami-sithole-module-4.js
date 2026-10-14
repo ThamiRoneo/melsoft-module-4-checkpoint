@@ -156,7 +156,7 @@ console.log('\nVENUE FULL\nSTOP ADMITTING PEOPLE');
 let countDownMinutes = 10;
 let minutes = countDownMinutes % 60;
 
- console.log('Festival closes in 10 minutes');
+ console.log('\n\nFestival closes in 10 minutes');
 while (minutes <= countDownMinutes) {
  
   if (minutes < 6) {
@@ -171,6 +171,7 @@ while (minutes <= countDownMinutes) {
    console.log('Festival closes in 1 minute');
    continue
   }
+  break;
 }
 console.log('FESTIVAL CLOSED');
 
