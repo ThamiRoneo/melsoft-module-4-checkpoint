@@ -153,7 +153,26 @@ for (let attendee of attendees) {
 console.log('\nVENUE FULL\nSTOP ADMITTING PEOPLE');
 
 // Challenge 11 - Closing-Time Countdown
+let countDownMinutes = 10;
+let minutes = countDownMinutes % 60;
 
+ console.log('Festival closes in 10 minutes');
+while (minutes <= countDownMinutes) {
+ 
+  if (minutes < 6) {
+    console.log('WARNING LAST ENTRY ENDED');
+    continue;
+  }
+  if (minutes < 3) {
+    console.log('PLEASE PROCEED TO THE EXIT');
+    continue;
+  }
+ if (minutes == 1) {
+   console.log('Festival closes in 1 minute');
+   continue
+  }
+}
+console.log('FESTIVAL CLOSED');
 
 // Final Challenge: Festival Control Dashboard
 let option = 3;
