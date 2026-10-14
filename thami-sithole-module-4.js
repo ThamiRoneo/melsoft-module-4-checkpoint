@@ -151,7 +151,7 @@ for (let attendee of attendees) {
 }
 
 console.log('\nVENUE FULL\nSTOP ADMITTING PEOPLE');
- 
+
 // Challenge 11 - Closing-Time Countdown
 
 
@@ -233,3 +233,46 @@ console.log('\n\n================================\nFESTIVAL CONTROL\n===========
       break;
 
   }
+
+/* **************************************************************************************
+****************************     Submission Questions      ******************************
+*****************************************************************************************
+*
+* 1. I used double (&&) operator because I needed all the conditions that gives
+*    an attendee entrance to be true - as operands evaluated by && they both or all
+*    have to be true. In this scope i needed for the attendee's to be 18 and must have
+*    a valid ticket.
+*
+* 2. I used 'else if' on Challenge 2. In order for the requirements stated by the challenge
+*    for processing festival entry. I had three conditions - first, approve entry where
+*    attendee is 18 or older, with a ticket, second, deny entry to an attendee with a
+*    ticket but they're younger than 18, lastly, deny entry because of not having a ticket at all.
+*
+* 3. It is an appropriate control because, of its capability to group multiple conditions
+*    under one variables, and it uses strict (===) equality for comparison, to ensure that
+*    both a value and type they match without implicit type coercion.
+*
+* 4. The break in my search stops the evaluation of the search as soon as the results are returned,
+*    and the continue in the security check, helps the program to continue checking even after coming
+*    across an attendee without a ticket, as there could still be other attendees to check with tickets
+*    after the one that did not have.
+*
+* 5  I used a for ... in loop to help me iterate through the fields of the object attendees, using key as
+*    a variable so that I am able to access the spend property of attendees. I then derived a condition
+*    that any spending above a thousand to find the highest.
+*
+* 6. I prevented my venue from exceeding its capacity by making use of a while loop nested
+*    in a for ... of loop for iteration of the object attendees. my while loop has 3 conditions
+*    and the first is responsible for ensuring that capacity does not get exceeded. I declared
+*    and assigned the peopleInside variable to 1 then used it on my condition that peopleInside
+*    has to be less or equal to capacity, then increment peopleInside and the condition will do
+*    hold. I also added a break keyword at the end of the code block of my while loop to stop
+*    once the condition is met.
+*
+* 7. The already existing information will be re-evaluated with the additional 20 attendees - which will
+*    introduce changes to the statistics calculation, possibility of having a new big spender, new entries and
+*    denials. etc. but i am confident that my program will still run and accommodate the additional 20 attendees.
+*
+* 8. Challenge 11: Closing-Time Countdown for me got tricky and I am writing this part I am still figuring it out,
+*    planning my logic and I won't stop trying until I get comfortable and a working solution.
+* */
