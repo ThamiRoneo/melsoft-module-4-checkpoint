@@ -108,7 +108,7 @@ for (let attendee of attendees) {
   generalCount += (attendee.ticket === 'General');
   totalSpend += (attendee.spend);
   averageSpend = totalSpend / (validTickets);
-  
+
 }
 
 console.log(`Valid Tickets: ${validTickets}`);
@@ -129,10 +129,25 @@ for (let attendee of attendees) {
 // Challenge 9 - Find the Biggest Spender
 console.log('\nFinding the Biggest Spender:\n');
 console.log('===== TOP CUSTOMER =====');
-let biggestSpender = attendees[0];
-
 for (let key in attendees) {
   if (attendees[key].spend >= 1000) {
     console.log(`Name: ${attendees[key].name}\nAmount Spend: R${attendees[key].spend}\nReward: Backstage Upgrade`);
+    break;
   }
 }
+
+// Challenge 10 - Venue Capacity
+console.log('\nVenue Capacity:\n')
+let capacity = 5;
+let peopleInside = 1;
+
+for (let attendee of attendees) {
+  while (peopleInside <= capacity && (attendee.hasTicket === true && attendee.age >= 18)) {
+    console.log(`${attendee.name} entered`)
+    console.log(`People inside: ${peopleInside} / ${capacity}\n`)
+    peopleInside++;
+    break;
+  }
+}
+
+console.log('\nVENUE FULL\nSTOP ADMITTING PEOPLE');
