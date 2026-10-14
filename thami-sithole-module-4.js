@@ -150,9 +150,10 @@ for (let attendee of attendees) {
   }
 }
 
-console.log('\nVENUE FULL\nSTOP ADMITTING PEOPLE');
+console.log('\nVENUE FULL\nSTOP ADMITTING PEOPLE\n\n');
 
 // Challenge 11 - Closing-Time Countdown
+console.log('Closing-Time Countdown:\n')
 let minutes = 10 % 60;
 while (minutes != 0) {
   console.log(`Festival closes in ${minutes} minutes...`);
@@ -161,8 +162,7 @@ while (minutes != 0) {
   if (minutes <= 2 % 20) {
     console.log('PLEASE PROCEED TO THE EXIT');
     continue;
-  }
-  if (minutes <= 5 % 60) {
+  }else if (minutes <= 5 % 60) {
     console.log('WARNING LAST ENTRY HAS ENDED');
     continue;
   }
