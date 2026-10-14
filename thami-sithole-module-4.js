@@ -151,3 +151,85 @@ for (let attendee of attendees) {
 }
 
 console.log('\nVENUE FULL\nSTOP ADMITTING PEOPLE');
+ 
+// Challenge 11 - Closing-Time Countdown
+
+
+// Final Challenge: Festival Control Dashboard
+let option = 3;
+
+console.log('\n\n================================\nFESTIVAL CONTROL\n================================\n1 - View Attendee Queue\n2 - Process Entry\n3 - View VIP Guests\n4 - View Denied Attendees\n5 - View Festival Statistics\n6 - Find Biggest Spender\n7 - Close Festival\n\n');
+
+  switch (option) {
+    case 1:
+      console.log('(1) Attendee Queue\n');
+      for (let attendee of attendees) {
+        if (attendee.hasTicket === true) {
+          console.log(`Name: ${attendee.name}\nAge: ${attendee.age}\nTicket: ${attendee.ticket}\nValid Ticket: ${attendee.hasTicket}`);
+          console.log('=======================');
+        }
+      }
+      break;
+    case 2:
+      console.log('(2) Process Entry\n');
+      for (let attendee of attendees) {
+        if (attendee.age >= 18 && attendee.hasTicket === true) {
+        console.log(`${attendee.name} -> ENTRY APPROVED`);
+        }else if (attendee.age < 18 && attendee.hasTicket === true) {
+                console.log(`${attendee.name} -> ENTRY DENIED: UNDER 18`);
+              } else {
+                console.log(`${attendee.name} -> ENTRY DENIED: NO VALID TICKET`);
+              }
+      }
+      break;
+    case 3:
+      console.log('(3) VIP GUESTS\n');
+      for (let attendee of attendees) {
+        if ((attendee.hasTicket === true && attendee.age >= 18) && attendee.ticket === 'VIP') {
+        console.log(`${attendee.name}`);
+        }
+      }
+      break;
+    case 4:
+      console.log('(4) Denied Attemdees\n');
+      for (let attendee of attendees) {
+        if (attendee.age < 18 && attendee.hasTicket === true) {
+        console.log(`${attendee.name} -> ENTRY DENIED: UNDER 18`);
+      } else {
+        console.log(`${attendee.name} -> ENTRY DENIED: NO VALID TICKET`);
+        }
+      }
+      break;
+    case 5:
+      console.log('(5) Festival Statistics\n');
+      for (let attendee of attendees) {
+        validTickets += attendee.hasTicket;
+        invalidTickets += (!attendee.hasTicket);
+        under18 += (attendee.age < 18);
+        vipCount += (attendee.ticket === 'VIP');
+        generalCount += (attendee.ticket === 'General');
+        totalSpend += (attendee.spend);
+        averageSpend = totalSpend / (validTickets);
+      }
+
+      console.log(`Valid Tickets: ${validTickets}`);
+      console.log(`Invalid Tickets: ${invalidTickets}`);
+      console.log(`Under-18 attendees: ${under18}`);
+      console.log(`VIP ticket holders: ${vipCount}`);
+      console.log(`General ticket holders: ${generalCount}`);
+      console.log(`Total amount spent: R ${totalSpend.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
+      console.log(`Average amount spent per attendee: R ${averageSpend.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
+      break;
+    case 6:
+      console.log('(6) Find Biggest Spender\n');
+      for (let key in attendees) {
+        if (attendees[key].spend >= 1000) {
+          console.log(`Name: ${attendees[key].name}\nAmount Spend: R${attendees[key].spend}\nReward: Backstage Upgrade`);
+        }
+      }
+      break;
+    case 7:
+      console.log('(7) Thank you! and see you on the next one! ;)');
+      break;
+
+  }
